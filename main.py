@@ -9,7 +9,7 @@ import math, time, sys, os
 
 # Set up the constants:
 PAUSE_AMOUNT = 0.1  # Pause length of one-tenth of a second.
-WIDTH, HEIGHT = 80, 24
+WIDTH, HEIGHT = os.get_terminal_size()  # Get the width and height of the terminal.
 SCALEX = (WIDTH - 4) // 8
 SCALEY = (HEIGHT - 4) // 8
 # Text cells are twice as tall as they are wide, so set scaley:
