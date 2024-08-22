@@ -16,7 +16,7 @@ LINE_CHAR = chr(9608)  # Character 9608 is a solid block.
 
 # (!) Try setting two of these values to zero to rotate the cube only
 # along a single axis:
-X_ROTATE_SPEED = 0.03
+X_ROTATE_SPEED = 0.20
 Y_ROTATE_SPEED = 0.08
 Z_ROTATE_SPEED = 0.13
 
@@ -174,7 +174,7 @@ try:
             z = CUBE_CORNERS[i][Z]
             rotatedCorners[i] = rotatePoint(x, y, z, xRotation,
                 yRotation, zRotation)
-
+        colors = [fore_fromhex(str(int(x,16))+str(int(y,16))+str(int(z,16))) for x,y,z,a,b,c in rotatedCorners]
         # Get the points of the cube lines:
         cubePoints = []
         for fromCornerIndex, toCornerIndex in ((0, 1), (1, 3), (3, 2), (2, 0), (0, 4), (1, 5), (2, 6), (3, 7), (4, 5), (5, 7), (7, 6), (6, 4)):
@@ -187,8 +187,8 @@ try:
         cubePoints = tuple(frozenset(cubePoints))
 
         # Display the cube on the screen:
-        for point in cubePoints:
-            SCREEN.content[point[1]][point[0]] = LINE_CHAR
+        for i,point in enumerate(cubePoints):
+            SCREEN.content[point[1]][point[0]] = f"{colors[i]}{LINE_CHAR}{RESET}"
         after = time.time()
         fps = int(1 / (after - before))
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
