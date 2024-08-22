@@ -17,6 +17,8 @@ def rotate(origin, point, angle):
 
     qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
     qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
+    qx = int(qx//1)
+    qy = int(qy//1)
     return qx, qy
 
 def draw_line(p1,p2):
