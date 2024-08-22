@@ -27,6 +27,7 @@ X = 0
 Y = 1
 Z = 2
 
+clock = pygame.time.Clock()
 
 def line(x1, y1, x2, y2):
     """Returns a list of points in a line between the given points.
@@ -189,8 +190,8 @@ try:
         # Display the cube on the screen:
         for i,point in enumerate(cubePoints):
             SCREEN.content[point[1] if point[1] < HEIGHT else 0+(HEIGHT-point[1])][point[0] if point[0] < WIDTH else 0+(WIDTH-point[0])] = (f"{Fore.CYAN}{LINE_CHAR}{RESET}")
-        after = time.time()
-        fps = int(1 / (after - before) if after - before != 0 else 0)
+        clock.tick()
+        fps = clock.get_fps()
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
         SCREEN.draw()
         for point in cubePoints:
