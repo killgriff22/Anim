@@ -205,7 +205,7 @@ try:
         fps = int(1 / (after - before))
         print(f'fps:{fps} Press Ctrl-C to quit.', end='', flush=True)
 
-        time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
+        #time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
         # Clear the screen:
         if sys.platform == 'win32':
