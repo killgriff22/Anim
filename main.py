@@ -26,7 +26,9 @@ def draw_line(p1,p2):
     dy = y2 - y1
     steps_x = abs(dx)
     steps_y = abs(dy)
-    func = lambda x,b:(steps_y/steps_x if steps_y>steps_x else steps_x/steps_y)*x+b
+    func = lambda x,b:(steps_y/steps_x)*x+b 
+    if steps_x == 0:
+        func = lambda x,b:b+1 if dy > 0 else b-1
     for x in range(steps_x):
         y = func(x,y1)
         Display.content[int(y)][int(x)] = "X"
