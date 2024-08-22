@@ -171,7 +171,7 @@ try:
     while True:  # Main program loop.
         # Rotate the cube along different axes by different amounts:
         before= time.time()
-        SCREEN.clear()
+        SCREEN.deep_clear()
         xRotation += X_ROTATE_SPEED
         yRotation += Y_ROTATE_SPEED
         zRotation += Z_ROTATE_SPEED
