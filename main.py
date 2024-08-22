@@ -190,7 +190,7 @@ try:
         for i,point in enumerate(cubePoints):
             SCREEN.content[point[1]][point[0]] = warn(f"{LINE_CHAR}")
         after = time.time()
-        fps = int(1 / (after - before))
+        fps = int(1 / (after - before) if after - before != 0 else 0)
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
         SCREEN.draw()
         for point in cubePoints:
