@@ -174,7 +174,7 @@ try:
             z = CUBE_CORNERS[i][Z]
             rotatedCorners[i] = rotatePoint(x, y, z, xRotation,
                 yRotation, zRotation)
-        colors = [fore_fromhex(hex(x,16)[2:]+hex(y,16)[2:]+hex(z,16)[2:]) for x,y,z in rotatedCorners]
+       # colors = [fore_fromhex(hex(x,16)[2:]+hex(y,16)[2:]+hex(z,16)[2:]) for x,y,z in rotatedCorners]
         # Get the points of the cube lines:
         cubePoints = []
         for fromCornerIndex, toCornerIndex in ((0, 1), (1, 3), (3, 2), (2, 0), (0, 4), (1, 5), (2, 6), (3, 7), (4, 5), (5, 7), (7, 6), (6, 4)):
@@ -188,7 +188,7 @@ try:
 
         # Display the cube on the screen:
         for i,point in enumerate(cubePoints):
-            SCREEN.content[point[1]][point[0]] = f"{colors[i]}{LINE_CHAR}{RESET}"
+            SCREEN.content[point[1]][point[0]] = warn(f"{LINE_CHAR}")
         after = time.time()
         fps = int(1 / (after - before))
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
