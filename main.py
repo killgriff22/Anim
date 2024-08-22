@@ -172,6 +172,7 @@ try:
         xRotation += X_ROTATE_SPEED
         yRotation += Y_ROTATE_SPEED
         zRotation += Z_ROTATE_SPEED
+        before= time.time()
         for i in range(len(CUBE_CORNERS)):
             x = CUBE_CORNERS[i][X]
             y = CUBE_CORNERS[i][Y]
@@ -200,7 +201,9 @@ try:
                     # Display empty space:
                     print(' ', end='', flush=False)
             print(flush=False)
-        print('Press Ctrl-C to quit.', end='', flush=True)
+        after = time.time()
+        fps = int(1 / (after - before))
+        print(f'{fps}Press Ctrl-C to quit.', end='', flush=True)
 
         time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
