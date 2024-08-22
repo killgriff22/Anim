@@ -203,7 +203,7 @@ try:
             print(flush=False)
         after = time.time()
         fps = int(1 / (after - before))
-        print(f'{fps}Press Ctrl-C to quit.', end='', flush=True)
+        print(f'fps:{fps} Press Ctrl-C to quit.', end='', flush=True)
 
         time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
