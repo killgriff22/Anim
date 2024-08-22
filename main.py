@@ -37,7 +37,7 @@ draw_line(*points)
 Display.draw()
 for i in range(180):
     Display.clear()
-    points =[rotate(points[0],points[1],math.radians(i))]
+    points =[rotate(points[0],points[1],math.radians(i)),points[1]]
     draw_line(*points)
     Display.draw()
     time.sleep(0.1)
