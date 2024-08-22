@@ -174,7 +174,7 @@ try:
             z = CUBE_CORNERS[i][Z]
             rotatedCorners[i] = rotatePoint(x, y, z, xRotation,
                 yRotation, zRotation)
-        colors = [fore_fromhex(str(int(x,16))+str(int(y,16))+str(int(z,16))) for x,y,z in rotatedCorners]
+        colors = [fore_fromhex(hex(x,16)[2:]+hex(y,16)[2:]+hex(z,16)[2:]) for x,y,z in rotatedCorners]
         # Get the points of the cube lines:
         cubePoints = []
         for fromCornerIndex, toCornerIndex in ((0, 1), (1, 3), (3, 2), (2, 0), (0, 4), (1, 5), (2, 6), (3, 7), (4, 5), (5, 7), (7, 6), (6, 4)):
