@@ -1,8 +1,8 @@
-import math
-from MultiTerm import *
 import os
 print(os.get_terminal_size())
 input("Press Enter to continue...")
+import math
+from MultiTerm import *
 Display = Screen(tuple(os.get_terminal_size()), (0, 0))
 Display.clear()
 
