@@ -193,9 +193,7 @@ try:
         fps = int(1 / (after - before) if after - before != 0 else 0)
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
         SCREEN.draw()
-        for point in cubePoints:
-            SCREEN.content[point[1] if point[1] < HEIGHT else 0+(HEIGHT-point[1])][point[0] if point[0] < WIDTH else 0+(WIDTH-point[0])] = " "
-
+        SCREEN.deep_clear()
         time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
 except KeyboardInterrupt:
