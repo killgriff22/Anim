@@ -27,8 +27,12 @@ def draw_line(p1,p2):
     for x in range(steps_x):
         y = func(x,y1)
         Display.content[int(y)][int(x)] = "X"
-
-draw_line((0,0),(10,10))
-Display.draw()
+points = [(0,0),(10,10),(20,0),(10,-10)]
+for i in range(len(points)):
+    p1 = points[i]
+    p2 = points[(i+1)%len(points)]
+    draw_line(p1,p2)
+    Display.draw()
+    time.sleep(.5)
 while True:
     pass
