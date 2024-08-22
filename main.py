@@ -32,7 +32,7 @@ def draw_line(p1,p2):
     for x in range(steps_x):
         y = func(x,y1)
         Display.content[int(y)][int(x)] = "X"
-points = [(0,0),(0,10),(10,10),(10,0),(0,0)]
+points = [(1,1),(1,10),(10,10),(10,1),(1,1)]
 for i in range(len(points)):
     p1 = points[i]
     p2 = points[(i+1)%len(points)]
