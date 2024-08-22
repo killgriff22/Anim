@@ -6,10 +6,11 @@ Tags: large, artistic, math"""
 # This program MUST be run in a Terminal/Command Prompt window.
 
 import math, time, sys, os
-
+from MultiTerm import *
 # Set up the constants:
 PAUSE_AMOUNT = 0.1  # Pause length of one-tenth of a second.
 WIDTH, HEIGHT = os.get_terminal_size()  # Get the width and height of the terminal.
+SCREEN = Screen((WIDTH, HEIGHT),(0,0))
 SCALEX = (WIDTH - 4) // 8
 SCALEY = (HEIGHT - 4) // 8
 # Text cells are twice as tall as they are wide, so set scaley:
@@ -169,10 +170,11 @@ zRotation = 0.0
 try:
     while True:  # Main program loop.
         # Rotate the cube along different axes by different amounts:
+        before= time.time()
+        SCREEN.clear()
         xRotation += X_ROTATE_SPEED
         yRotation += Y_ROTATE_SPEED
         zRotation += Z_ROTATE_SPEED
-        before= time.time()
         for i in range(len(CUBE_CORNERS)):
             x = CUBE_CORNERS[i][X]
             y = CUBE_CORNERS[i][Y]
@@ -192,18 +194,12 @@ try:
         cubePoints = tuple(frozenset(cubePoints))
 
         # Display the cube on the screen:
-        for y in range(HEIGHT):
-            for x in range(WIDTH):
-                if (x, y) in cubePoints:
-                    # Display full block:
-                    print(LINE_CHAR, end='', flush=False)
-                else:
-                    # Display empty space:
-                    print(' ', end='', flush=False)
-            print(flush=False)
+        for point in cubePoints:
+            SCREEN.content[point[1]][point[0]] = LINE_CHAR
+        SCREEN.draw()
         after = time.time()
         fps = int(1 / (after - before))
-        print(f'fps:{fps} Press Ctrl-C to quit.', end='', flush=True)
+        SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
 
         #time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
