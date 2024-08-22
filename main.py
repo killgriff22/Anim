@@ -1,3 +1,6 @@
+import os
+print(os.get_terminal_size())
+input("Press Enter to continue...")
 from MultiTerm import *
 import math
 Display = Screen(tuple(os.get_terminal_size()),(0,0))
