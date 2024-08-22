@@ -34,12 +34,12 @@ def draw_line(p1,p2):
         Display.content[int(y)][int(x+x1)] = "X"
 points = [(10,10),(20,20)]
 draw_line(*points)
-Display.show()
+Display.draw()
 for i in range(180):
     Display.clear()
     points =[rotate(points[0],points[1],math.radians(i))]
     draw_line(*points)
-    Display.show()
+    Display.draw()
     time.sleep(0.1)
 while True:
     pass
