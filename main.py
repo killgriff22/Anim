@@ -197,7 +197,6 @@ try:
         for point in cubePoints:
             SCREEN.content[point[1] if point[1] < HEIGHT else 0+(HEIGHT-point[1])][point[0]] = " "
 
-        time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
 except KeyboardInterrupt:
     print('Rotating Cube, by Al Sweigart al@inventwithpython.com')
