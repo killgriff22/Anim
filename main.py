@@ -144,14 +144,14 @@ The indexes for each corner in CUBE_CORNERS are marked in this diagram:
     | 4-|-5
     |/  |/
     6---7"""
-CUBE_CORNERS = [[-2, -1, -2], # Point 0
-                [ 2, -1, -2], # Point 1
-                [-2, -1,  2], # Point 2
-                [ 2, -1,  2], # Point 3
-                [-2,  1, -2], # Point 4
-                [ 2,  1, -2], # Point 5
-                [-2,  1,  2], # Point 6
-                [ 2,  1,  2]] # Point 7
+CUBE_CORNERS = [[-1, -1, -1], # Point 0
+                [ 1, -1, -1], # Point 1
+                [-1, -1,  1], # Point 2
+                [ 1, -1,  1], # Point 3
+                [-1,  1, -1], # Point 4
+                [ 1,  1, -1], # Point 5
+                [-1,  1,  1], # Point 6
+                [ 1,  1,  1]] # Point 7
 # rotatedCorners stores the XYZ coordinates from CUBE_CORNERS after
 # they've been rotated by rx, ry, and rz amounts:
 rotatedCorners = [None, None, None, None, None, None, None, None]
