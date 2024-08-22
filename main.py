@@ -1,10 +1,3 @@
-"""Rotating Cube, by Al Sweigart al@inventwithpython.com
-A rotating cube animation. Press Ctrl-C to stop.
-This code is available at https://nostarch.com/big-book-small-python-programming
-Tags: large, artistic, math"""
-
-# This program MUST be run in a Terminal/Command Prompt window.
-
 import math, time, sys, os
 from MultiTerm import *
 # Set up the constants:
@@ -204,12 +197,6 @@ try:
             SCREEN.content[point[1]][point[0]] = " "
 
         time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
-
-        # Clear the screen:
-        if sys.platform == 'win32':
-            os.system('cls')  # Windows uses the cls command.
-        else:
-            os.system('clear')  # macOS and Linux use the clear command.
 
 except KeyboardInterrupt:
     print('Rotating Cube, by Al Sweigart al@inventwithpython.com')
