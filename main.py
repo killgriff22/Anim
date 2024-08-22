@@ -188,7 +188,7 @@ try:
 
         # Display the cube on the screen:
         for i,point in enumerate(cubePoints):
-            SCREEN.content[point[1]][point[0]] = warn(f"{LINE_CHAR}")
+            SCREEN.content[point[1]][point[0]] = (f"{Fore.CYAN}{LINE_CHAR}{RESET}")
         after = time.time()
         fps = int(1 / (after - before) if after - before != 0 else 0)
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
