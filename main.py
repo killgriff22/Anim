@@ -33,11 +33,13 @@ def draw_line(p1,p2):
         y = func(x,y1)
         Display.content[int(y)][int(x+x1)] = "X"
 points = [(10,10),(20,20)]
-for i in range(len(points)):
-    p1 = points[i]
-    p2 = points[(i+1)%len(points)]
-    draw_line(p1,p2)
-    Display.draw()
-    time.sleep(.5)
+draw_line(*points)
+Display.show()
+for i in range(180):
+    Display.clear()
+    points =[rotate(points[0],points[1],math.radians(i))]
+    draw_line(*points)
+    Display.show()
+    time.sleep(0.1)
 while True:
     pass
