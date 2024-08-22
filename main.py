@@ -171,7 +171,7 @@ try:
     while True:  # Main program loop.
         # Rotate the cube along different axes by different amounts:
         before= time.time()
-        SCREEN.deep_clear()
+        SCREEN.clear()
         xRotation += X_ROTATE_SPEED
         yRotation += Y_ROTATE_SPEED
         zRotation += Z_ROTATE_SPEED
@@ -196,12 +196,14 @@ try:
         # Display the cube on the screen:
         for point in cubePoints:
             SCREEN.content[point[1]][point[0]] = LINE_CHAR
-        SCREEN.draw()
         after = time.time()
         fps = int(1 / (after - before))
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
+        SCREEN.draw()
+        for point in cubePoints:
+            SCREEN.content[point[1]][point[0]] = " "
 
-        #time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
+        time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
         # Clear the screen:
         if sys.platform == 'win32':
