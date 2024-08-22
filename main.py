@@ -194,7 +194,7 @@ try:
         SCREEN.blit(f'fps:{fps} Press Ctrl-C to quit.',(0,-1))
         SCREEN.draw()
         for point in cubePoints:
-            SCREEN.content[point[1]][point[0]] = " "
+            SCREEN.content[point[1] if point[1] < HEIGHT else 0+(HEIGHT-point[1])][point[0] if point[0] < WIDTH else 0+(WIDTH-point[0])] = " "
 
         time.sleep(PAUSE_AMOUNT)  # Pause for a bit.
 
