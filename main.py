@@ -31,7 +31,7 @@ def draw_line(p1,p2):
         func = lambda x,b:b+1 if dy > 0 else b-1
     for x in range(steps_x):
         y = func(x,y1)
-        Display.content[int(y)][int(x)] = "X"
+        Display.content[int(y)][int(x+x1)] = "X"
 points = [(10,10),(20,20)]
 for i in range(len(points)):
     p1 = points[i]
