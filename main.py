@@ -151,8 +151,8 @@ CUBE_CORNERS = [[-1, -1, -1], # Point 0
                 [ 1, -1,  1], # Point 3
                 [-1,  1, -1], # Point 4
                 [ 1,  1, -1], # Point 5
-                [-1,  1,  1], # Point 6
-                [ 1,  1,  1]] # Point 7
+                [-1,  1,  1],] # Point 6
+                #[ 1,  1,  1]] # Point 7
 # rotatedCorners stores the XYZ coordinates from CUBE_CORNERS after
 # they've been rotated by rx, ry, and rz amounts:
 rotatedCorners = [None, None, None, None, None, None, None, None]
@@ -164,7 +164,6 @@ zRotation = 0.0
 try:
     while True:  # Main program loop.
         # Rotate the cube along different axes by different amounts:
-        before= time.time()
         SCREEN.clear()
         xRotation += X_ROTATE_SPEED
         yRotation += Y_ROTATE_SPEED
