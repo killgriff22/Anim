@@ -16,9 +16,9 @@ LINE_CHAR = chr(9608)  # Character 9608 is a solid block.
 
 # (!) Try setting two of these values to zero to rotate the cube only
 # along a single axis:
-X_ROTATE_SPEED = 0.20
+X_ROTATE_SPEED = 0.08
 Y_ROTATE_SPEED = 0.08
-Z_ROTATE_SPEED = 0.13
+Z_ROTATE_SPEED = 0.08
 
 # This program stores XYZ coordinates in lists, with the X coordinate
 # at index 0, Y at 1, and Z at 2. These constants make our code more
@@ -151,8 +151,8 @@ CUBE_CORNERS = [[-1, -1, -1], # Point 0
                 [ 1, -1,  1], # Point 3
                 [-1,  1, -1], # Point 4
                 [ 1,  1, -1], # Point 5
-                [-1,  1,  1],] # Point 6
-                #[ 1,  1,  1]] # Point 7
+                [-1,  1,  1], # Point 6
+                [ 1,  1,  1]] # Point 7
 # rotatedCorners stores the XYZ coordinates from CUBE_CORNERS after
 # they've been rotated by rx, ry, and rz amounts:
 rotatedCorners = [None, None, None, None, None, None, None, None]
